@@ -1,6 +1,7 @@
 import { defineConfig } from "cypress";
 
 export default defineConfig({
+    projectId: "1ndmxw",
     e2e: {
         baseUrl: 'https://staging.syllable.cloud',
         defaultCommandTimeout: 10000,
