@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "cypress:open": "cypress open"
+    "cypress open": "cypress open"
   },
   "dependencies": {
     "mailslurp-client": "^15.24.1",

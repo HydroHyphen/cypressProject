@@ -37,7 +37,7 @@ describe('Page Object Model Test', () => {
   })
 })
 
-//For normal use"
+//For normal use:
 // nmp run cypress open
 //For terminal use:
 // npx cypress run --spec "cypress/e2e/pomTest.cy.ts" --env username='...',password='...'   
