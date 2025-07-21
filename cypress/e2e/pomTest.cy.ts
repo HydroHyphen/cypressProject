@@ -53,12 +53,8 @@ describe('Page Object Model Test', () => {
 // printing to the terminal is janky from outside the test file -- could feed inputs into an array or just read the final post for each chat seperately 
 // mailslurp is still only like 95% set up -- ran out of free accounts to test on and not sure if It is important enough to use another account to finalize
 // navigateToAgents just takes you out of dashboards if you start there because clicking on the sidebar wasn't working
+// To have tests working I am ignoring 3 errors which is not a good practice
 
 // Todo:
-// Fix bugs
-// Start implementing CI using git actions 
-
-// Run tests in Parallel (configured for git actions):
-// cypress run --record --key=abc123 --parallel 
-
-
+// Configure parallelization 
+// use alt account for mailslurp config

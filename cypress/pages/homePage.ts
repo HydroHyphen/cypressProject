@@ -25,8 +25,9 @@ export class homePage{
     navigateToAgents(){
         this.elements.selectNavBar().click()
         // cy.get('span').contains('Agents').parent().parent().click({ force: true })      //temp solution1
+        cy.get('h4').contains('Dashboards')                                                // temp fix to temp solution 2 -- will only work if you start at dashboards -- for waiting for unexpected redirect to render
         cy.url().then(url => {                                                             // temp solution2
-            const modifiedUrl = url.replace('/dashboards?page=0', '/agents'); 
+            const modifiedUrl = url.replace('/dashboards', '/agents'); 
             cy.visit(modifiedUrl); 
         })
     }
