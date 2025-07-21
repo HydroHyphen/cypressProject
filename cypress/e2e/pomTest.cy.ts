@@ -11,7 +11,7 @@ const agentName: string = Cypress.env('agent')
 describe('Page Object Model Test', () => {
   it('passes', () => {
     signupPage.signup(username, password)
-    cy.wait(60000) // 1 min to accept verification email 
+    cy.wait(30000) // 30 seconds to accept verification email 
     loginPage.login(username, password)
 
     cy.origin(originUrl, { args: { agentName } }, ({ agentName }) => {
@@ -38,7 +38,7 @@ describe('Page Object Model Test', () => {
 })
 
 //For normal use:
-// nmp run cypress open
+// nmp run cypress:open
 //For terminal use:
 // npx cypress run --spec "cypress/e2e/pomTest.cy.ts" --env username='...',password='...'   
 
@@ -57,3 +57,8 @@ describe('Page Object Model Test', () => {
 // Todo:
 // Fix bugs
 // Start implementing CI using git actions 
+
+// Run tests in Parallel (configured for git actions):
+// cypress run --record --key=abc123 --parallel 
+
+
