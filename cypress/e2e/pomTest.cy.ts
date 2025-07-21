@@ -56,5 +56,5 @@ describe('Page Object Model Test', () => {
 // To have tests working I am ignoring 3 errors which is not a good practice
 
 // Todo:
-// Fix bugs
-// Start implementing CI using git actions 
+// Configure parallelization 
+// use alt account for mailslurp config
