@@ -10,8 +10,8 @@ const agentName: string = Cypress.env('agent')
 
 describe('Page Object Model Test', () => {
   it('passes', () => {
-    // signupPage.signup(username, password)
-    // cy.wait(30000) // 30 seconds to accept verification email 
+    signupPage.signup(username, password)
+    cy.wait(30000) // 30 seconds to accept verification email 
     loginPage.login(username, password)
 
     cy.origin(originUrl, { args: { agentName } }, ({ agentName }) => {
