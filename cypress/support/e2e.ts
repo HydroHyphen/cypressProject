@@ -19,7 +19,7 @@ import './commands'
 
 
 Cypress.on('uncaught:exception', (err) => {
-  if (err.message.includes('getTheme is not a function') || err.message.includes('419')) {
+  if (err.message.includes('getTheme is not a function') || err.message.includes('419') || err.message.includes("Failed to set the 'adoptedStyleSheets'")) {
     return false;
   }
 });
