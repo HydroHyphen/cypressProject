@@ -1,8 +1,19 @@
 describe('syllable login', () => {
   it('passes', () => {
 
-    const username: string = Cypress.env('username')
-    const password: string = Cypress.env('password')
+    const testUsername = process.env.TEST_USERNAME
+    const testPassword = process.env.TEST_PASSWORD
+    var username
+    var password
+
+    if (testUsername && testPassword){
+      username = testUsername  
+      password = testPassword
+    }
+    else {
+      username = Cypress.env('username')
+      password = Cypress.env('password')
+    }
 
     cy.visit('/')
     cy.get('ak-flow-executor').shadow().find("ak-stage-identification").shadow().find("ak-form-element").find("input").type(username)
