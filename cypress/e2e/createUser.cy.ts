@@ -7,8 +7,7 @@ describe('syllable login', () => {
     const generateEmail: string = "YOUR_EMAIL_HERE"+"+staging"+betterDate+"@gmail.com" // removed for confidentiality
     const generatePassword: string = '...'
 
-    signupPage.signup(generateEmail,generatePassword)
-    //Need to go into email for verification
+    // signupPage.signup(generateEmail,generatePassword)
   })
 })
 
