@@ -25,9 +25,7 @@ jobs:
           # https://docs.cypress.io/guides/cloud/projects#Set-up-a-project-to-record
           record: true
           parallel: true # Runs test in parallel using settings above
-      - name: EnvTest
-        run:  echo "$ENV_TEST" 
-        
+      - run: echo "Username is '${CYPRESS.test}"
         env:
           # For recording and parallelization to work you must set your CYPRESS_RECORD_KEY
           # in GitHub repo → Settings → Secrets → Actions
@@ -37,4 +35,4 @@ jobs:
 
           CYPRESS_username: ${{ secrets.USERNAME }}
           CYPRESS_password: ${{ secrets.PASSWORD }}
-          ENV_TEST: ${{ secrets.TEST }}
+          CYPRESS_test: ${{ secrets.Test }}
