@@ -35,4 +35,5 @@ jobs:
 
           CYPRESS_username: ${{ secrets.USERNAME }}
           CYPRESS_password: ${{ secrets.PASSWORD }}
-          CYPRESS_test: ${{ secrets.Test }}
+
+          CYPRESS_test: ${{ secrets.TEST }}

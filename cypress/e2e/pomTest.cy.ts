@@ -56,5 +56,4 @@ describe('Page Object Model Test', () => {
 // To have tests working I am ignoring 3 errors which is not a good practice
 
 // Todo:
-// Configure parallelization 
 // use alt account for mailslurp config
