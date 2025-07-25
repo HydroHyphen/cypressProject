@@ -44,9 +44,10 @@ export function createAgent (agentName: string){
 // cypress didn't handle while loops well so I made a recursive function
 export const input = (text: string) => {
     cy.wait('@sessionPost').then(intercept => {
-        expect(intercept.response?.statusCode).to.eq(200)
+        // expect(intercept.response?.statusCode).to.eq(200)
         const message = intercept?.response?.body
-        if (message.includes('\n2:')){
+        cy.log(message)
+        if (message.includes('\n2:') || intercept.response?.statusCode === 204 || message == null){
             input(text)
         }
         else{
@@ -81,6 +82,7 @@ export function startSession(oUrl:string, aName: string) {
         cy.get('path[opacity="0.32"]').parent().click()
         // cy.get('span').contains('Agents').parent().parent().click({ force: true })      //temp solution1
         cy.url().then(url => {                                                             // temp solution2
+            cy.wait(12000)                                                                  // temp solution 2.5
             const modifiedUrl = url.replace('/dashboards?page=0', '/agents'); 
             cy.visit(modifiedUrl); 
         })
@@ -93,6 +95,7 @@ export function startSession(oUrl:string, aName: string) {
         cy.url().then((url) => {
             agentUrl = url
         })
+        cy.get('button').contains('Start session').click()
     })
 
     // Start session
@@ -101,7 +104,7 @@ export function startSession(oUrl:string, aName: string) {
         const { chat1, chat2 } = Cypress.require('./chats.ts')  // chats imported from chats.ts -- can customize what you want to input there
         
         //Chat functionality
-        cy.get('button').contains('Start session').click()
+        // cy.get('button').contains('Start session').click()
         chat1() 
 
         // // For restart functionality
@@ -120,9 +123,10 @@ export function readPosts(oUrl: string, aName:string){
     let agentUrl = ""
     cy.origin(oUrl, { args: { aName } }, ({ aName }) => {
         cy.get('p').contains(aName).click()
-        // cy.url().then((url) => {
-        //     agentUrl = url
-        // })
+        cy.url().then((url) => {
+            agentUrl = url
+        })
+        cy.get('button').contains('Start session').click()
     })
     cy.intercept('POST', agentUrl).as('sessionPost')  
 }

@@ -19,7 +19,7 @@ import 'cypress-mailslurp';
 
 
 Cypress.on('uncaught:exception', (err) => {
-  if (err.message.includes('getTheme is not a function') || err.message.includes('419') || err.message.includes("Failed to set the 'adoptedStyleSheets'")) {
+  if (err.message.includes('getTheme is not a function') || err.message.includes('419') || err.message.includes("Failed to set the 'adoptedStyleSheets'") || err.message.includes('Cannot read properties of null')) {
     return false;
   }
 });

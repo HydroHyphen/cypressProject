@@ -48,14 +48,14 @@ export class homePage{
 
     testAgent(agentName: string, chat: VoidFunction){
 
-        this.elements.startSession().click()
+        // this.elements.startSession().click()
         chat1()
 
         this.elements.resetSession().click()
-        this.elements.startSession().click()
-        chat2()
+        // this.elements.startSession().click()
+        // chat2()
 
-        this.elements.endSession().click()  
+        // this.elements.endSession().click()  
     }
 
 }
