@@ -61,6 +61,3 @@ export class homePage{
 }
 
 // export default new homePage()
-
-//make sure to test everything here
-

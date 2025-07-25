@@ -46,8 +46,7 @@ export const input = (text: string) => {
     cy.wait('@sessionPost').then(intercept => {
         // expect(intercept.response?.statusCode).to.eq(200)
         const message = intercept?.response?.body
-        cy.log(message)
-        if (message.includes('\n2:') || intercept.response?.statusCode === 204 || message == null){
+        if (message.includes('\n2:') || intercept.response?.statusCode === 204){
             input(text)
         }
         else{
