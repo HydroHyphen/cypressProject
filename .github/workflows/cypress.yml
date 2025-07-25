@@ -35,3 +35,5 @@ jobs:
 
           CYPRESS_username: ${{ secrets.USERNAME }}
           CYPRESS_password: ${{ secrets.PASSWORD }}
+          CYPRESS_url: ${{ secrets.URL }}
+          CYPRESS_agent: ${{ secrets.AGENT }}
